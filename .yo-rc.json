@@ -1,0 +1,11 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Statistical Computing in JS",
+    "packageVersion": "0.1.0",
+    "revealTheme": "solarized",
+    "useSass": false,
+    "deployToGithubPages": true,
+    "githubUsername": "Planeshifter",
+    "githubRepository": "presentation-polymer"
+  }
+}

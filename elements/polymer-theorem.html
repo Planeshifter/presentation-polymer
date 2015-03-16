@@ -1,0 +1,19 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="polymer-filters.html">
+
+<polymer-element name="shower-theorem" noscript>
+  <template>
+    <style>
+      #theorem {
+          display: block;
+          margin: 12px 0;
+      }
+    </style>
+    <div id="theorem"><b>Theorem{{title | wrapParentheses}} </b><i><content></content></i></div>
+    <script>
+      Polymer({
+        title: '',
+      });
+    </script>
+  </template>
+</polymer-element>

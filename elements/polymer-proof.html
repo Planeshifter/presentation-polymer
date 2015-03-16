@@ -1,0 +1,29 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="polymer-filters.html">
+
+<polymer-element name="shower-proof" noscript>
+  <template>
+    <style>
+      .proof {
+          display: block;
+          margin: 12px 0;
+          font-style: normal;
+      }
+
+      .proof:before {
+          content: "Proof.";
+          font-style: italic;
+      }
+
+      .proof:after {
+          content: "\25FC";
+          float:right;
+      }
+    </style>
+    <div class="proof"><content></content></div>
+    <script>
+      Polymer({
+      });
+    </script>
+  </template>
+</polymer-element>

@@ -1,0 +1,23 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="polymer-filters.html">
+
+<polymer-element name="shower-definition" noscript>
+  <template>
+    <style>
+      .definition {
+          display: block;
+          margin: 12px 0;
+          font-style: normal;
+      }
+
+      .definition:before {
+          content: "Definition.";
+          font-weight: bold;
+          font-style: normal;
+      }
+    </style>
+    <div class="definition"><content></content></div>
+    <script>
+    </script>
+  </template>
+</polymer-element>

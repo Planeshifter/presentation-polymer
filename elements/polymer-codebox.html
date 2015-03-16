@@ -1,0 +1,54 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="polymer-filters.html">
+
+<polymer-element name="polymer-codebox">
+  <template>
+    <style>
+      textarea {
+        resize: none;
+        border:1px solid black;
+        background-color: '{{backgroundColor}}';
+        width:300px;
+        overflow:auto;
+        padding:10px;
+        font-size:0.9em;
+        font-family: monospace;
+      }
+      .outputbox {
+          border:1px solid black;
+          background-color: '{{backgroundColor}}';
+          width:300px;
+          height: 50px;
+          overflow:auto;
+          padding:10px;
+      }
+      .outputbox code {
+          font-size:0.9em;
+          font-family: monospace, sans-serif;
+      }
+    </style>
+      <textarea id="code" value="{{code}}" on-change="{{evalCode}}" rows="4" cols="20">
+      </textarea>
+      <div class="outputbox">
+        <code id="output">
+
+        </code>
+      </div>
+  </template>
+  <script>
+    Polymer('polymer-codebox',{
+      backgroundColor: '#FFFFFF',
+      code: 'Math.pow(3,2);',
+      contenteditable: 'true',
+      evalCode: function(val){
+        var code = "return " + this.$.code.value;
+        var evalFun = new Function(code);
+        var elem = this.$.output;
+        elem.innerHTML = evalFun();
+      },
+      ready: function(){
+        this.evalCode();
+      }
+    });
+  </script>
+</polymer-element>

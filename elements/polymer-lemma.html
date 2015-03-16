@@ -1,0 +1,19 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="polymer-filters.html">
+
+<polymer-element name="shower-lemma" noscript>
+  <template>
+    <style>
+      #lemma {
+          display: block;
+          margin: 12px 0;
+      }
+    </style>
+    <div id="lemma"><b>Lemma{{title | wrapParentheses}} </b><i><content></content></i></div>
+    <script>
+      Polymer({
+        title: '',
+      });
+    </script>
+  </template>
+</polymer-element>
