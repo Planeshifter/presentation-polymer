@@ -1,52 +1,55 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="polymer-filters.html">
 
-<polymer-element name="polymer-codebox">
+<polymer-element name="polymer-codebox" attributes="code">
   <template>
     <style>
       textarea {
         resize: none;
         border:1px solid black;
         background-color: '{{backgroundColor}}';
-        width:300px;
+        width:{{width}};
         overflow:auto;
-        padding:10px;
-        font-size:0.9em;
+        padding:5px;
+        font-size:0.6em;
         font-family: monospace;
       }
-      .outputbox {
-          border:1px solid black;
-          background-color: '{{backgroundColor}}';
-          width:300px;
-          height: 50px;
-          overflow:auto;
-          padding:10px;
-      }
-      .outputbox code {
-          font-size:0.9em;
-          font-family: monospace, sans-serif;
+      #output {
+        border:1px solid black;
+        background-color: '{{backgroundColor}}';
+        width: {{width}};
+        height:{{height}};
+        overflow:auto;
+        padding:5px;
+        font-size:0.4em;
+        text-align:left;
+        font-family: monospace, sans-serif;
+        line-height:20px;
       }
     </style>
-      <textarea id="code" value="{{code}}" on-change="{{evalCode}}" rows="4" cols="20">
+      <textarea id="code" value="{{code}}" on-change="{{evalCode}}" rows="4" cols="30">
       </textarea>
-      <div class="outputbox">
-        <code id="output">
+      <div align="center">
+        <pre id="output">
 
-        </code>
+        </pre>
       </div>
   </template>
   <script>
     Polymer('polymer-codebox',{
       backgroundColor: '#FFFFFF',
       code: 'Math.pow(3,2);',
+      width: '500px',
+      height: '50%',
       contenteditable: 'true',
       evalCode: function(val){
         var code = "return " + this.$.code.value;
         var evalFun = new Function(code);
         var elem = this.$.output;
-        elem.innerHTML = evalFun();
+        elem.innerHTML = JSON.stringify( evalFun(), null, 1 );
       },
       ready: function(){
+        this.$.code.value = this.code;
         this.evalCode();
       }
     });
