@@ -1,5 +1,5 @@
 
-# Statistical Computing in JS
+# Statistical Computing in JavaScript
 
 From the terminal, pop in:
 

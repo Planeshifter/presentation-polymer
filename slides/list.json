@@ -1,8 +1,13 @@
 [
     "index.md",
     [
-      "the-case-for-javascript.md",
-      "js-is-ubiquitous.md",
-      "js-as-a-teaching-tool.md"
-    ]
+        "the-case-for-javascript.md",
+        "js-is-ubiquitous.md",
+        "active_community.md",
+        "js-as-a-teaching-tool.md"
+    ],[
+        "my-work.md",
+        "my-work-2.md"
+    ],
+    "my-situation.md"
 ]
